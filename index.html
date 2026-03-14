@@ -589,7 +589,7 @@ img {
           <img src="https://raw.githubusercontent.com/Lion-Technology-Solutions/Images/main/l7.jpg" alt="LionTech feature" />
           <div class="hero-card-content">
             <p class="mini-label">Featured Profile</p>
-            <h2>Elvis Lavert</h2>
+            <h2>Prof Prince</h2>
             <p>Technology Director · LionTech Community Mentor</p>
           </div>
         </div>
@@ -599,7 +599,7 @@ img {
     <section id="about" class="section">
       <div class="container two-col">
         <div>
-          <p class="section-tag">About the application for devops</p>
+          <p class="section-tag">About the application</p>
           <h2>Built for collaboration and version control practice</h2>
           <p>
             This static HTML application is structured for a class workflow where every student edits a single profile entry,
@@ -672,18 +672,19 @@ img {
 
         <div class="steps-grid">
           <article class="step-card"><span>1</span><h3>Fork the project</h3><p>Each student forks the repository to their own GitHub account.</p></article>
-          <article class="step-card"><span>2</span><h3>Edit one profile object</h3><p>Update a single student entry in <code>script.js</code> using your real details.</p></article>
+          <article class="step-card"><span>2</span><h3>Edit one profile object</h3><p>Open the <code>studentProfiles</code> section in this HTML file and either add your own object or replace one placeholder slot with your real details.</p></article>
           <article class="step-card"><span>3</span><h3>Commit changes</h3><p>Use a clean commit message such as <code>add my student profile</code>.</p></article>
           <article class="step-card"><span>4</span><h3>Open a pull request</h3><p>Submit your PR to the main repository for instructor review.</p></article>
         </div>
 
         <div class="code-box">
-<pre><code>const newStudentProfile = {
+<pre><code>// Add this inside the studentProfiles array
+const newStudentProfile = {
   id: 24,
-  name: "Engineer Maxwell",
+  name: "Your Name",
   role: "Current Student",
-  image: "https://scontent.fyyz1-1.fna.fbcdn.net/v/t39.30808-1/636878050_4283001971914539_4508493152717575625_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=1d2534&_nc_ohc=fxp6qxiizLIQ7kNvwFULEpD&_nc_oc=AdmIibfv7fADSIV2jJca-02dh21rwxlHEZOAJBfjiTfjybRLH29k0Ykm96SIDLyE9cEwNp8l8S96ILqBkoihfBM5&_nc_zt=24&_nc_ht=scontent.fyyz1-1.fna&_nc_gid=Ps-omjua5nEXDFKQ0KAqXQ&_nc_ss=8&oh=00_AfxQZ40uTdg2wlEXFL4VxAOmSHd-6zi0cYZ-ewA-FX_g6g&oe=69BBA91C",
-  description: "I just love tech.",
+  image: "https://your-image-url.com/photo.jpg",
+  description: "Write a short profile summary.",
   city: "Toronto",
   country: "Canada",
   linkedin: "https://www.linkedin.com/in/your-profile/",
@@ -741,6 +742,39 @@ img {
   </footer>
 
   <script>
+/*
+============================================================
+STUDENT INSTRUCTIONS: HOW TO ADD YOUR PROFILE
+============================================================
+1. Find the studentProfiles array below.
+2. Copy the sample object template inside the comment.
+3. Paste your new profile object inside the array, or replace one placeholder slot.
+4. Update every field with your own details.
+5. Save the file, commit your change, and open a pull request.
+
+PROFILE TEMPLATE
+{
+  id: 2,
+  name: "Your Full Name",
+  role: "Current Student",
+  image: "https://your-photo-link.com/photo.jpg",
+  description: "Write 1-2 sentences about yourself.",
+  city: "Your City",
+  country: "Your Country",
+  linkedin: "https://www.linkedin.com/in/your-linkedin/",
+  dreamJob: "Your Dream Career",
+  skills: ["Skill 1", "Skill 2", "Skill 3"],
+  isPlaceholder: false
+}
+
+IMPORTANT:
+- Use a unique id number.
+- Set isPlaceholder to false.
+- Keep commas between fields.
+- If you do not have a photo yet, you can keep the placeholder image temporarily.
+============================================================
+*/
+
 const studentProfiles = [
   {
     id: 1,
@@ -763,17 +797,37 @@ function buildPlaceholderProfiles(total = 120) {
       id: i,
       name: `Student ${i}`,
       role: "Current Student",
-      image: "https://scontent.fyyz1-1.fna.fbcdn.net/v/t39.30808-1/636878050_4283001971914539_4508493152717575625_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=1d2534&_nc_ohc=fxp6qxiizLIQ7kNvwFULEpD&_nc_oc=AdmIibfv7fADSIV2jJca-02dh21rwxlHEZOAJBfjiTfjybRLH29k0Ykm96SIDLyE9cEwNp8l8S96ILqBkoihfBM5&_nc_zt=24&_nc_ht=scontent.fyyz1-1.fna&_nc_gid=Ps-omjua5nEXDFKQ0KAqXQ&_nc_ss=8&oh=00_AfxQZ40uTdg2wlEXFL4VxAOmSHd-6zi0cYZ-ewA-FX_g6g&oe=69BBA91C",
+      image: "https://via.placeholder.com/300x300.png?text=Add+Photo",
       description: "This slot is ready for a student to update through a pull request.",
-      city: "Bamenda",
-      country: "Cameroon",
-      linkedin: "https://www.facebook.com/prince.prince.521608",
-      dreamJob: "Senior Infrastructure Engineer",
-      skills: [ "linux", "Git"],
+      city: "Add city",
+      country: "Add country",
+      linkedin: "#",
+      dreamJob: "Add dream career",
+      skills: ["Add skill 1", "Add skill 2"],
       isPlaceholder: true
     });
   }
 }
+
+/*
+OPTION 1: REPLACE A PLACEHOLDER SLOT
+-----------------------------------
+Instead of adding a brand-new object, a student can edit one generated placeholder.
+Example:
+studentProfiles[1] = {
+  id: 2,
+  name: "Jane Doe",
+  role: "Current Student",
+  image: "https://your-photo-link.com/jane.jpg",
+  description: "I am learning Git and GitHub through LionTech live classes.",
+  city: "Toronto",
+  country: "Canada",
+  linkedin: "https://www.linkedin.com/in/janedoe/",
+  dreamJob: "DevOps Engineer",
+  skills: ["Git", "GitHub", "Linux", "Docker"],
+  isPlaceholder: false
+};
+*/
 
 buildPlaceholderProfiles(120);
 
