@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Classes | LionTech Dream Career App</title>
+  <meta name="description" content="LionTech Live Classes dream career application for teaching pull requests. Students add their profile, dream career, city, country, and picture through GitHub pull requests." />
+
+  <meta property="og:title" content="Live Classes | LionTech Dream Career App" />
+  <meta property="og:description" content="Learn pull requests by adding your student profile to the LionTech Live Classes app." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Lion-Technology-Solutions/Images/main/l7.jpg" />
+  <meta property="og:image:alt" content="LionTech feature image" />
+  <meta property="og:site_name" content="LionTech Live Classes" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Live Classes | LionTech Dream Career App" />
+  <meta name="twitter:description" content="Learn pull requests by adding your student profile to the LionTech Live Classes app." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/Lion-Technology-Solutions/Images/main/l7.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --bg: #0b1020;
+  --panel: #121a31;
+  --panel-2: #ffffff;
+  --text: #e9eefc;
+  --muted: #b5c0de;
+  --dark: #111827;
+  --soft: #eef3ff;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #2563eb;
+  --accent-2: #dc2626;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(11, 16, 32, 0.78);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.brand-kicker {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.main-nav a:hover,
+.text-link:hover,
+.site-footer a:hover {
+  color: #fff;
+}
+
+.hero {
+  padding: 5rem 0 3rem;
+  background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.28), transparent 28%),
+    radial-gradient(circle at left center, rgba(220, 38, 38, 0.18), transparent 26%);
+}
+
+.hero-grid,
+.two-col,
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow,
+.section-tag,
+.mini-label,
+.pill {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.eyebrow,
+.section-tag,
+.mini-label {
+  color: #93c5fd;
+}
+
+.hero h1,
+.section h2 {
+  margin: 0.4rem 0 1rem;
+  line-height: 1.05;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.hero-copy,
+.section p,
+.class-card p,
+.step-card p,
+.site-footer p,
+.section-copy {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.7rem 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #3b82f6);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.hero-stats {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-stats li,
+.hero-card,
+.info-panel,
+.class-card,
+.step-card,
+.student-card,
+.student-summary > div,
+.code-box {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero-stats li {
+  min-width: 155px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-stats strong,
+.student-summary strong {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.hero-stats span,
+.student-summary span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hero-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  overflow: hidden;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.hero-card-content {
+  padding: 1.2rem;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.alt-bg {
+  background: #0d152b;
+}
+
+.info-panel,
+.class-card,
+.step-card,
+.code-box,
+.student-card,
+.student-summary > div {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.info-panel,
+.class-card,
+.step-card,
+.code-box,
+.student-card {
+  padding: 1.25rem;
+}
+
+.info-panel ul {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.class-grid,
+.steps-grid,
+.student-grid,
+.student-summary {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.class-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.steps-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.step-card span {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.pill {
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.16);
+  color: #bfdbfe;
+  margin-bottom: 0.75rem;
+}
+
+.text-link {
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+.code-box {
+  margin-top: 1.5rem;
+  overflow: auto;
+}
+
+.code-box pre {
+  margin: 0;
+  white-space: pre-wrap;
+  color: #dbeafe;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.toolbar input,
+.toolbar select {
+  min-width: 240px;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  outline: none;
+}
+
+.toolbar select option {
+  color: #111827;
+}
+
+.student-summary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 1.5rem;
+}
+
+.student-summary > div {
+  padding: 1rem 1.2rem;
+}
+
+.student-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.student-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.student-top img {
+  width: 86px;
+  height: 86px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.08);
+}
+
+.student-meta h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.student-meta p,
+.meta-list,
+.skill-list,
+.empty-state {
+  margin: 0;
+  color: var(--muted);
+}
+
+.status-badge {
+  align-self: flex-start;
+  padding: 0.38rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.77rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-complete {
+  background: rgba(22, 163, 74, 0.15);
+  color: #86efac;
+}
+
+.status-placeholder {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+}
+
+.meta-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.meta-list strong {
+  color: #fff;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  font-size: 0.88rem;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: auto;
+}
+
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  font-weight: 700;
+}
+
+.action-link.primary {
+  background: rgba(37, 99, 235, 0.2);
+  color: #bfdbfe;
+}
+
+.action-link.facebook {
+  background: rgba(24, 119, 242, 0.18);
+  color: #dbeafe;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0 3rem;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  border: 1px dashed rgba(255,255,255,0.18);
+  border-radius: var(--radius);
+}
+
+@media (max-width: 1024px) {
+  .hero-grid,
+  .two-col,
+  .footer-grid,
+  .class-grid,
+  .steps-grid,
+  .student-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .responsive-head,
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-wrap,
+  .main-nav,
+  .hero-actions,
+  .toolbar,
+  .card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-grid,
+  .two-col,
+  .footer-grid,
+  .class-grid,
+  .steps-grid,
+  .student-grid,
+  .student-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .student-top {
+    align-items: flex-start;
+  }
+}
+
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="LionTech Live Classes home">
+        <img src="https://raw.githubusercontent.com/Lion-Technology-Solutions/Images/main/l7.jpg" alt="LionTech logo" />
+        <div>
+          <span class="brand-kicker">LionTech</span>
+          <strong>Live Classes</strong>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#live-classes">Live Classes</a>
+        <a href="#pull-request-lab">Pull Request Lab</a>
+        <a href="#current-students">Current Students</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">LionTech Version Control Demo</p>
+          <h1>Live Classes</h1>
+          <p class="hero-copy">
+            A collaborative student showcase built to teach <strong>Git</strong> and <strong>pull requests</strong>.
+            Each student adds their own profile in code, opens a PR, and sees their dream career profile rendered on the front end.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#current-students">View Current Students</a>
+            <a class="btn btn-secondary" href="#pull-request-lab">How to Contribute</a>
+          </div>
+
+          <ul class="hero-stats" aria-label="Program highlights">
+            <li><strong>120+</strong><span>student slots ready</span></li>
+            <li><strong>PR-based</strong><span>hands-on learning flow</span></li>
+            <li><strong>Frontend</strong><span>profiles render instantly</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-card">
+          <img src="https://raw.githubusercontent.com/Lion-Technology-Solutions/Images/main/l7.jpg" alt="LionTech feature" />
+          <div class="hero-card-content">
+            <p class="mini-label">Featured Profile</p>
+            <h2>Prof Prince</h2>
+            <p>Technology Director · LionTech Community Mentor</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div>
+          <p class="section-tag">About the application</p>
+          <h2>Built for collaboration and version control practice</h2>
+          <p>
+            This static HTML application is structured for a class workflow where every student edits a single profile entry,
+            commits the change, and submits a pull request for review.
+          </p>
+          <p>
+            The front end displays each student’s <strong>name</strong>, <strong>dream career</strong>, <strong>city</strong>,
+            <strong>country of residence</strong>, <strong>skills</strong>, <strong>profile photo</strong>, and <strong>LinkedIn</strong> profile.
+          </p>
+        </div>
+
+        <aside class="info-panel">
+          <h3>Student profile fields</h3>
+          <ul>
+            <li>Full name</li>
+            <li>Dream career</li>
+            <li>City</li>
+            <li>Country of residence</li>
+            <li>Profile picture URL</li>
+            <li>LinkedIn URL</li>
+            <li>Short description</li>
+            <li>Skills list</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="live-classes" class="section alt-bg">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-tag">Live classes</p>
+            <h2>Class resources and demo links</h2>
+          </div>
+        </div>
+
+        <div class="class-grid">
+          <article class="class-card">
+            <span class="pill">YouTube class</span>
+            <h3>Start Your DevOps Career in 2026</h3>
+            <p>Live class session featuring Prof Prince on starting a DevOps journey the right way.</p>
+            <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=NAbRxb-7fNI">Watch class</a>
+          </article>
+
+          <article class="class-card">
+            <span class="pill">Version control demo</span>
+            <h3>LionTech Version Control Demo</h3>
+            <p>Use this session as a companion resource while students fork, edit profiles, and open pull requests.</p>
+            <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=NX4f-RoSJ5c">Watch demo</a>
+          </article>
+
+          <article class="class-card">
+            <span class="pill">LionTech website</span>
+            <h3>Program context</h3>
+            <p>Use LionTech Academy’s public information as context for the class and career journey.</p>
+            <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://liontechacademy.com/">Visit LionTech Academy</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pull-request-lab" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-tag">Pull request lab</p>
+            <h2>How students contribute their profile</h2>
+          </div>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card"><span>1</span><h3>Fork the project</h3><p>Each student forks the repository to their own GitHub account.</p></article>
+          <article class="step-card"><span>2</span><h3>Edit one profile object</h3><p>Update a single student entry in <code>script.js</code> using your real details.</p></article>
+          <article class="step-card"><span>3</span><h3>Commit changes</h3><p>Use a clean commit message such as <code>add my student profile</code>.</p></article>
+          <article class="step-card"><span>4</span><h3>Open a pull request</h3><p>Submit your PR to the main repository for instructor review.</p></article>
+        </div>
+
+        <div class="code-box">
+<pre><code>const newStudentProfile = {
+  id: 24,
+  name: "Your Name",
+  role: "Current Student",
+  image: "https://your-image-url.com/photo.jpg",
+  description: "Write a short profile summary.",
+  city: "Toronto",
+  country: "Canada",
+  linkedin: "https://www.linkedin.com/in/your-profile/",
+  dreamJob: "Cloud Engineer",
+  skills: ["Git", "GitHub", "Linux", "AWS"]
+};</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="current-students" class="section alt-bg">
+      <div class="container">
+        <div class="section-head responsive-head">
+          <div>
+            <p class="section-tag">Current students</p>
+            <h2>Student dream career directory</h2>
+            <p class="section-copy">All student profiles appear here after being added in code. The layout is optimized for 120+ student records.</p>
+          </div>
+
+          <div class="toolbar">
+            <input id="searchInput" type="search" placeholder="Search by name, city, skill, or dream career" aria-label="Search students" />
+            <select id="studentFilter" aria-label="Filter students">
+              <option value="all">All Profiles</option>
+              <option value="real">Completed Profiles</option>
+              <option value="placeholder">Available Student Slots</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="student-summary">
+          <div><strong id="profileCount">0</strong><span>Total profiles</span></div>
+          <div><strong id="completedCount">0</strong><span>Completed profiles</span></div>
+          <div><strong id="openCount">0</strong><span>Open student slots</span></div>
+        </div>
+
+        <div id="studentGrid" class="student-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>LionTech Live Classes</h3>
+        <p>Build your public profile, practice version control, and learn pull requests through real collaboration.</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p><a href="https://liontechacademy.com/" target="_blank" rel="noopener noreferrer">liontechacademy.com</a></p>
+        <p><a href="tel:+16473818836">+1 647-381-8836</a></p>
+        <p>92 Caplan Ave, Barrie, ON L4N 0Z7, Canada</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+const studentProfiles = [
+  {
+    id: 1,
+    name: "Prof Prince",
+    role: "Current Student",
+    image: "https://raw.githubusercontent.com/Lion-Technology-Solutions/Images/main/l7.jpg",
+    description: "Prof Prince is featured in this demo profile and represents the class contribution format students will follow when submitting a pull request.",
+    city: "Barrie",
+    country: "Canada",
+    linkedin: "https://www.linkedin.com/in/elvisntungwennketi/?skipRedirect=true",
+    dreamJob: "Technology Director",
+    skills: ["Leadership", "Git", "GitHub", "DevOps", "Mentorship"],
+    isPlaceholder: false
+  }
+];
+
+function buildPlaceholderProfiles(total = 120) {
+  for (let i = 2; i <= total; i += 1) {
+    studentProfiles.push({
+      id: i,
+      name: `Student ${i}`,
+      role: "Current Student",
+      image: "https://via.placeholder.com/300x300.png?text=Add+Photo",
+      description: "This slot is ready for a student to update through a pull request.",
+      city: "Add city",
+      country: "Add country",
+      linkedin: "#",
+      dreamJob: "Add dream career",
+      skills: ["Add skill 1", "Add skill 2"],
+      isPlaceholder: true
+    });
+  }
+}
+
+buildPlaceholderProfiles(120);
+
+const studentGrid = document.getElementById("studentGrid");
+const searchInput = document.getElementById("searchInput");
+const studentFilter = document.getElementById("studentFilter");
+const profileCount = document.getElementById("profileCount");
+const completedCount = document.getElementById("completedCount");
+const openCount = document.getElementById("openCount");
+
+function getShareLink(profile) {
+  const currentUrl = window.location.href.split("#")[0];
+  const shareText = `${profile.name} - ${profile.dreamJob} | LionTech Live Classes`;
+  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&quote=${encodeURIComponent(shareText)}`;
+}
+
+function renderSummary() {
+  const total = studentProfiles.length;
+  const completed = studentProfiles.filter((profile) => !profile.isPlaceholder).length;
+  const openSlots = total - completed;
+
+  profileCount.textContent = total;
+  completedCount.textContent = completed;
+  openCount.textContent = openSlots;
+}
+
+function matchesFilter(profile, text, filterValue) {
+  const haystack = [
+    profile.name,
+    profile.city,
+    profile.country,
+    profile.dreamJob,
+    profile.description,
+    ...(profile.skills || [])
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  const passesSearch = haystack.includes(text.toLowerCase());
+  const passesType =
+    filterValue === "all" ||
+    (filterValue === "real" && !profile.isPlaceholder) ||
+    (filterValue === "placeholder" && profile.isPlaceholder);
+
+  return passesSearch && passesType;
+}
+
+function renderProfiles() {
+  const text = searchInput.value.trim();
+  const filterValue = studentFilter.value;
+
+  const filteredProfiles = studentProfiles.filter((profile) => matchesFilter(profile, text, filterValue));
+
+  studentGrid.innerHTML = "";
+
+  if (!filteredProfiles.length) {
+    studentGrid.innerHTML = `
+      <div class="empty-state">
+        <h3>No profiles found</h3>
+        <p>Try a different name, city, dream career, or filter.</p>
+      </div>
+    `;
+    return;
+  }
+
+  filteredProfiles.forEach((profile) => {
+    const card = document.createElement("article");
+    card.className = "student-card";
+
+    const statusClass = profile.isPlaceholder ? "status-placeholder" : "status-complete";
+    const statusText = profile.isPlaceholder ? "Open Slot" : "Completed";
+    const linkedInButton = profile.linkedin && profile.linkedin !== "#"
+      ? `<a class="action-link primary" href="${profile.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`
+      : `<span class="action-link">LinkedIn pending</span>`;
+
+    card.innerHTML = `
+      <span class="status-badge ${statusClass}">${statusText}</span>
+      <div class="student-top">
+        <img src="${profile.image}" alt="${profile.name} profile picture" loading="lazy" />
+        <div class="student-meta">
+          <h3>${profile.name}</h3>
+          <p>${profile.role}</p>
+        </div>
+      </div>
+
+      <p>${profile.description}</p>
+
+      <div class="meta-list">
+        <div><strong>Dream Career:</strong> ${profile.dreamJob}</div>
+        <div><strong>City:</strong> ${profile.city}</div>
+        <div><strong>Country:</strong> ${profile.country}</div>
+      </div>
+
+      <ul class="skill-list">
+        ${(profile.skills || []).map((skill) => `<li>${skill}</li>`).join("")}
+      </ul>
+
+      <div class="card-actions">
+        ${linkedInButton}
+        <a class="action-link facebook" href="${getShareLink(profile)}" target="_blank" rel="noopener noreferrer">Share to Facebook</a>
+      </div>
+    `;
+
+    studentGrid.appendChild(card);
+  });
+}
+
+searchInput.addEventListener("input", renderProfiles);
+studentFilter.addEventListener("change", renderProfiles);
+
+renderSummary();
+renderProfiles();
+
+</script>
+</body>
+</html>
