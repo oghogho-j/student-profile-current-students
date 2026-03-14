@@ -794,17 +794,17 @@ const studentProfiles = [
 function buildPlaceholderProfiles(total = 120) {
   for (let i = 2; i <= total; i += 1) {
     studentProfiles.push({
-      id: 2,
-      name: `Uche ${i}`,
+      id: i,
+      name: `Student ${i}`,
       role: "Current Student",
-      image: "https://www.facebook.com/photo/?fbid=3988262624721810&set=a.1666223503592412",
+      image: "https://via.placeholder.com/300x300.png?text=Add+Photo",
       description: "This slot is ready for a student to update through a pull request.",
       city: "Add city",
       country: "Add country",
       linkedin: "#",
       dreamJob: "Add dream career",
       skills: ["Add skill 1", "Add skill 2"],
-      isPlaceholder: false
+      isPlaceholder: true
     });
   }
 }
