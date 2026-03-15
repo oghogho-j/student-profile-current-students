@@ -794,17 +794,17 @@ const studentProfiles = [
 function buildPlaceholderProfiles(total = 1) {
   for (let i = 2; i <= total; i += 1) {
     studentProfiles.push({
-      id: 2,
-      name: `elvis ${i}`,
-      role: "Current Student",
-      image: "https://via.placeholder.com/300x300.png?text=Add+Photo",
-      description: "This slot is ready for a student to update through a pull request.",
-      city: "Add city",
-      country: "Add country",
-      linkedin: "#",
-      dreamJob: "Add dream career",
-      skills: ["Add skill 1", "Add skill 2"],
-      isPlaceholder: false
+      id: i,
+          name: `Anderson Abi-Ache Shoh Chama ${i}`,
+          role: "Current Student",
+          image: "https://abiprofile.d3b9ow8s2mfrgl.amplifyapp.com/profile.jpg",
+          description: " I am a passionate DevOps student currently pursuing excellence at LionTech Canada.I excel at bridging the gap between development and operations, ensuring code goes from local to production reliably.",
+          city: "Douala",
+          country: "Cameroon",
+          linkedin: "https://www.linkedin.com/in/anderson-chama/",
+          dreamJob: "DevOps Consultant",
+          skills: ["Git", "GitHub", "Linux", "AWS", "Python", "Bash", "Docker"],
+          isPlaceholder: true
     });
   }
 }
